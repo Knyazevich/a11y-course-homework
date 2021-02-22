@@ -75,7 +75,7 @@
 <main role="main" class="main" id="content" tabindex="-1">
   <h1 class="visually-hidden">Государственный музей изобразительных искусств имени А. С. Пушкина</h1>
 
-  <span class="visually-hidden" id="events-title">Анонсы событий и продажа билетов</span>
+  <span class="visually-hidden" id="events-title" aria-hidden="true">Анонсы событий и продажа билетов</span>
 
   <section class="events" id="events" tabindex="-1" aria-labelledby="events-title">
     <div class="container">
@@ -220,11 +220,16 @@
             <img src="./assets/img/exhibition-1.jpg"
                  alt="Лорем ипсум — самая известная работа Святослава Рихтера"
                  class="museum__image">
-            <h3 class="museum__title" id="museum-image-title-1">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
+            <h3 class="museum__title" id="museum-image-title-1">
+              Святослав Рихтер в кругу друзей. Москва — Коктебель
+            </h3>
+
             <p class="museum__date">Выставка до 20 ноября</p>
+
             <p class="museum__description">
               Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст
             </p>
+
             <a href="/exhibition/1"
                class="museum__link"
                aria-describedby="museum-image-title-1">Купить билет</a>
@@ -232,28 +237,43 @@
 
           <div class="museum__item" role="group" tabindex="0">
             <img src="./assets/img/exhibition-2.jpg"
-                 alt="Постер инсталляции"
+                 alt="Постер инсталляции 'Тату'"
                  class="museum__image">
-            <h3 class="museum__title">Тату</h3>
+
+            <h3 class="museum__title" id="museum-image-title-2">Тату</h3>
+
             <p class="museum__date">Выставка до 27 сентября</p>
+
             <p class="museum__description">
               Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст
             </p>
-            <a href="/exhibition/2" class="museum__link">Купить билет</a>
+
+            <a href="/exhibition/2"
+               class="museum__link"
+               aria-describedby="museum-image-title-2">
+              Купить билет
+            </a>
           </div>
 
           <div class="museum__item" role="group" tabindex="0">
             <img src="./assets/img/exhibition-3.jpg"
                  alt="Девушка, смотрящая в даль — самая известная работа Дюрера"
                  class="museum__image">
-            <h3 class="museum__title">
+            <h3 class="museum__title" id="museum-image-title-3">
               От Дюрера до Матисса. Избранные рисунки из собрания ГМИИ им. А.С. Пушкина
             </h3>
+
             <p class="museum__date">Выставка до 1 ноября</p>
+
             <p class="museum__description">
               Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст
             </p>
-            <a href="/exhibition/3" class="museum__link">Купить билет</a>
+
+            <a href="/exhibition/3"
+               class="museum__link"
+               aria-describedby="museum-image-title-3">
+              Купить билет
+            </a>
           </div>
         </div>
 
@@ -279,7 +299,7 @@
       <h2 class="title" id="museum-title">Музей</h2>
 
       <div class="tabs">
-        <div role="tablist" aria-label="Категории" class="tabs__tablist">
+        <div role="tablist" aria-label="Категория информации о музее" class="tabs__tablist">
           <button role="tab"
                   aria-selected="true"
                   aria-controls="buildings-tab"
@@ -386,7 +406,7 @@
     <div class="container">
       <h2 class="title" id="streams-title">Онлайн-трансляции</h2>
 
-      <span class="visually-hidden" id="video-title">
+      <span class="visually-hidden" id="video-title" aria-hidden="true">
         Видео: "Ай Вейвей: движение к общечеловеческому"
       </span>
 
@@ -557,6 +577,6 @@
   </div>
 </div>
 
-<script src="./assets/js/main.min.js?ver=1.1"></script>
+<script src="./assets/js/main.min.js?ver=1.2"></script>
 </body>
 </html>

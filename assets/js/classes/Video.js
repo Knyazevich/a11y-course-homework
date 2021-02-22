@@ -32,8 +32,9 @@ class Video {
       iframe.focus();
     });
 
+    link.removeAttribute('aria-labelledby');
     link.removeAttribute('href');
-    link.removeAttribute('video-title');
+    link.setAttribute('role', 'presentation');
   }
 
   _createIframe(id, title) {
