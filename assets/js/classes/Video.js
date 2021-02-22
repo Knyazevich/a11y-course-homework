@@ -46,7 +46,7 @@ class Video {
       'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
     );
     iframe.setAttribute('allowfullscreen', 'true');
-    iframe.setAttribute('src', `https://youtube.com/embed/${id}?rel=0&showInfo=0&autoplay=1`);
+    iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${id}?rel=0&showInfo=0&autoplay=1`);
     iframe.classList.add('video__media');
 
     return iframe;
