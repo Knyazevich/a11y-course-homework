@@ -1,7 +1,7 @@
 import './polyfill';
 
 import 'focus-visible/dist/focus-visible.min';
-import smoothAnchors from './smooth-anchors';
+// import smoothAnchors from './smooth-anchors';
 
 import ContactForm from './classes/class.ContactForm';
 
@@ -11,7 +11,7 @@ class Main {
   }
 
   _run() {
-    smoothAnchors();
+    // smoothAnchors();
 
     new ContactForm();
   }

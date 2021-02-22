@@ -1,4 +1,13 @@
 @import (less) './../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css';
+@import '_variables';
+@import 'fonts';
+@import 'a11y';
+
+@media (min-width: 1200px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1062px !important;
+  }
+}
 
 html {
   box-sizing: border-box;
@@ -11,6 +20,52 @@ html {
 body {
   margin: 0;
   padding: 0;
+  font-family: @font-family;
 }
 
-@import 'fonts';
+.hidden {
+  display: none !important;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 59px;
+}
+
+.text {
+  font-size: 22px;
+  line-height: 26px;
+  color: #000000;
+}
+
+.text-link {
+  color: #af4bc5;
+}
+
+.button {
+  background: #5d16d5;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 11px 20px;
+  font-size: 18px;
+  line-height: 20px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button--blue {
+  background: #C7D2E9;
+  color: #000;
+}
+
+.button[disabled] {
+  background: #7c5ab5;
+}
+
+@import 'header';
+@import 'homepage';
+@import 'video';
+@import 'footer';
+@import 'modal';
