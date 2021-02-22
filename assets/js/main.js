@@ -1,9 +1,13 @@
 import './polyfill';
+import { qs, qsAll } from './dom-helpers';
 
-import 'focus-visible/dist/focus-visible.min';
-// import smoothAnchors from './smooth-anchors';
+// import 'focus-visible/dist/focus-visible.min';
 
-import ContactForm from './classes/class.ContactForm';
+import Tabs from './classes/Tabs';
+import Video from './classes/Video';
+import SubscriptionForm from './classes/SubscriptionForm';
+import LoginModal from './classes/LoginModal';
+import Carousel from './classes/Carousel';
 
 class Main {
   constructor() {
@@ -11,9 +15,18 @@ class Main {
   }
 
   _run() {
-    // smoothAnchors();
+    window.qs = qs;
+    window.qsAll = qsAll;
 
-    new ContactForm();
+    new Carousel();
+
+    new Tabs({
+      tabsContainer: '.museum .tabs',
+    });
+
+    new Video();
+    new SubscriptionForm();
+    new LoginModal();
   }
 }
 

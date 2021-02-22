@@ -1,0 +1,64 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.43);
+  z-index: 100;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-modal {
+  background: #fff;
+  border-radius: 8px;
+  padding: 70px 150px;
+}
+
+.login-modal__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: self-start;
+}
+
+.login-modal__label {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 35px;
+  color: #555555;
+  margin-bottom: 10px;
+}
+
+.login-modal__input {
+  background: #F9F9FB;
+  border: 1px solid #C7D2E9;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 19px;
+  margin-bottom: 57px;
+  width: 100%;
+  font-size: 17px;
+}
+
+.formfield--invalid .login-modal__input {
+  margin-bottom: 0;
+}
+
+.login-modal .invalid-message {
+  margin-bottom: 57px;
+}
+
+.login-modal__button {
+  background: #C7D2E9;
+  border-radius: 8px;
+  font-size: 30px;
+  line-height: 35px;
+  border: 1px solid transparent;
+  padding: 15px 209px;
+}
+

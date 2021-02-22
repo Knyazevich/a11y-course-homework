@@ -1,9 +1,14 @@
+
 .events-carousel {
   position: relative;
 }
 
 .events-carousel__slide {
   position: relative;
+}
+
+.events-carousel__image {
+  width: 100%;
 }
 
 .events-carousel__link {
@@ -37,6 +42,15 @@
 
 .events__links {
   margin-top: 37px;
+}
+
+.events__links-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.event__links-list-item {
+  display: inline-block;
 }
 
 .events__link {
@@ -104,4 +118,77 @@
   line-height: 19px;
   text-decoration-line: underline;
   color: #000;
+}
+
+@media screen and (max-width: 1200px) {
+  .museum__item {
+    max-width: 320px;
+    margin-right: 20px;
+  }
+
+  .video {
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .main-header__primary {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .languages, .user-controls {
+    margin-top: 30px;
+  }
+
+  .main-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-menu__element:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .events-carousel__link {
+    left: 23px;
+    bottom: 44px;
+  }
+
+  .events__links-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .event__links-list-item {
+    margin: 20px 0;
+  }
+
+  .museum__items {
+    max-width: 400px;
+  }
+
+  .museum__item {
+    width: 100%;
+  }
+
+  .events, .exhibitions, .museum, .streams {
+    padding-bottom: 50px;
+  }
+
+  .main-footer__container {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-footer__left, .main-footer__right {
+    width: 100%;
+  }
+
+  .main-footer__left {
+    margin-bottom: 50px;
+  }
 }

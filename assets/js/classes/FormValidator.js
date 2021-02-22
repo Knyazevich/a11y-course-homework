@@ -157,11 +157,13 @@ class FormValidator {
 
     messages.forEach((message) => {
       message.innerText = '';
+      message.classList.add('hidden');
     });
   }
 
   addError(messages, error) {
     messages.innerText = error;
+    messages.classList.remove('hidden');
   }
 
   scrollToTheFirstError() {

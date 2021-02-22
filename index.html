@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Главная | Государственный музей изобразительных искусств имени А. С. Пушкина</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta name="viewport" content="width=device-width">
+  <title>Главная - Государственный музей изобразительных искусств имени А. С. Пушкина</title>
+  <link rel="stylesheet" href="./assets/css/style.css?ver=1.0">
 </head>
 <body>
 <header class="main-header" role="banner">
@@ -22,8 +23,10 @@
         Перейти к основному контенту
       </a>
 
+      <span class="visually-hidden" id="search-title">Поиск</span>
+
       <div class="search">
-        <form class="search__form">
+        <form class="search__form" aria-labelledby="search-title">
           <label for="search-input" class="visually-hidden">Текст поиска</label>
           <input type="search"
                  class="search__input"
@@ -38,7 +41,7 @@
 
       <div class="languages">
         <nav class="languages__nav" role="navigation" aria-label="Языковое меню">
-          <span class="languages__language languages__language--current" tabindex="0">
+          <span class="languages__language languages__language--current">
             <span aria-hidden="true">RU</span>
             <span class="visually-hidden">Русский</span>
           </span>
@@ -52,7 +55,7 @@
       </div>
 
       <div class="user-controls">
-        <button class="user-controls__login-button" aria-label="Вход"></button>
+        <button class="user-controls__login-button" aria-label="Вход" aria-haspopup="dialog"></button>
       </div>
     </div>
   </div>
@@ -72,38 +75,82 @@
 <main role="main" class="main" id="content" tabindex="-1">
   <h1 class="visually-hidden">Государственный музей изобразительных искусств имени А. С. Пушкина</h1>
 
-  <section class="events" id="events" tabindex="-1">
+  <span class="visually-hidden" id="events-title">Анонсы событий и продажа билетов</span>
+
+  <section class="events" id="events" tabindex="-1" aria-labelledby="events-title">
     <div class="container">
-      <div class="events-carousel carousel">
-        <div class="events-carousel__slides-count visually-hidden"></div>
+      <div class="events-carousel carousel"
+           aria-roledescription="carousel"
+           aria-label="Анонсы событий"
+           aria-live="polite"
+           tabindex="0">
 
-        <div class="events-carousel__slide">
-          <span id="slide-1-desc" class="visually-hidden">
+        <div class="events-carousel__slide"
+             role="group"
+             aria-roledescription="slide"
+             aria-describedby="slide-1-desc"
+             aria-label="1 из 3"
+             aria-current="true"
+        >
+          <span id="slide-1-desc" class="visually-hidden" aria-hidden="true" lang="ru">
             Выставка "От Дюрера до Матисса". Избранные рисунки из собрания ГМИИ им. А. С. Пушкина.
             Проходит в главном здании музея 10 июля - 1 ноября
           </span>
 
-          <img class="events-carousel__image" src="./assets/img/first-slide.jpg" alt="" role="presentation">
+          <img class="events-carousel__image"
+               src="./assets/img/first-slide.jpg"
+               alt=""
+               role="presentation">
 
-          <a href="/tickets" class="button events-carousel__link" aria-labelledby="slide-1-desc">Билеты онлайн</a>
+          <a href="/tickets"
+             class="button events-carousel__link"
+             aria-describedby="slide-1-desc">
+            Билеты онлайн
+          </a>
         </div>
 
-        <div class="events-carousel__slide hidden">
-          <span id="slide-2-desc" class="visually-hidden">
-            Выставка "От Дюрера до Матисса". Избранные рисунки из собрания ГМИИ им. А. С. Пушкина.
-            Проходит в главном здании музея 10 июля - 1 ноября
+        <div class="events-carousel__slide hidden"
+             role="group"
+             aria-roledescription="slide"
+             aria-describedby="slide-2-desc"
+             aria-label="2 из 3">
+          <span id="slide-2-desc" class="visually-hidden" aria-hidden="true" lang="ru">
+            Выставка "Святослав Рихтер в кругу друзей. Москва — Коктебель".
+            Проходит в учебном здании музея до 20 ноября
           </span>
 
-          <a href="/tickets" class="button events-carousel__link" aria-labelledby="slide-2-desc">Билеты онлайн</a>
+          <img class="events-carousel__image"
+               src="./assets/img/second-slide.jpg"
+               alt=""
+               role="presentation">
+
+          <a href="/tickets"
+             class="button events-carousel__link"
+             aria-describedby="slide-2-desc">
+            Билеты онлайн
+          </a>
         </div>
 
-        <div class="events-carousel__slide hidden">
-          <span id="slide-3-desc" class="visually-hidden">
-            Выставка "От Дюрера до Матисса". Избранные рисунки из собрания ГМИИ им. А. С. Пушкина.
-            Проходит в главном здании музея 10 июля - 1 ноября
+        <div class="events-carousel__slide hidden"
+             role="group"
+             aria-roledescription="slide"
+             aria-describedby="slide-3-desc"
+             aria-label="3 из 3">
+          <span id="slide-3-desc" class="visually-hidden" aria-hidden="true" lang="ru">
+            Выставка "Тату". Более 3000 лет истории тату.
+            Проходит в галлерее до 27 сентября.
           </span>
 
-          <a href="/tickets" class="button events-carousel__link" aria-labelledby="slide-3-desc">Билеты онлайн</a>
+          <img class="events-carousel__image"
+               src="./assets/img/third-slide.png"
+               alt=""
+               role="presentation">
+
+          <a href="/tickets"
+             class="button events-carousel__link"
+             aria-labelledby="slide-3-desc">
+            Билеты онлайн
+          </a>
         </div>
 
         <button class="events-carousel__arrow events-carousel__arrow--prev"
@@ -115,10 +162,20 @@
         </button>
       </div>
 
-      <nav class="events__links" role="navigation" aria-label="Билетное меню">
-        <a href="/tickets" class="button events__link">Купить билет</a>
-        <a href="/donate" class="button events__link">Стать другом</a>
-        <a href="/shop" class="button events__link">Онлайн-магазин</a>
+      <nav class="events__links" role="navigation" aria-label="Платные услуги">
+        <ul class="events__links-list">
+          <li class="event__links-list-item">
+            <a href="/tickets" class="button events__link">Купить билет</a>
+          </li>
+
+          <li class="event__links-list-item">
+            <a href="/donate" class="button events__link">Стать другом</a>
+          </li>
+
+          <li class="event__links-list-item">
+            <a href="/shop" class="button events__link">Онлайн-магазин</a>
+          </li>
+        </ul>
       </nav>
     </div>
   </section>
@@ -159,19 +216,21 @@
              id="exhibitions-all-tab"
              aria-labelledby="exhibitions-all"
              class="museum__items">
-          <div class="museum__item" role="group">
+          <div class="museum__item" role="group" tabindex="0">
             <img src="./assets/img/exhibition-1.jpg"
                  alt="Лорем ипсум — самая известная работа Святослава Рихтера"
                  class="museum__image">
-            <h3 class="museum__title">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
+            <h3 class="museum__title" id="museum-image-title-1">Святослав Рихтер в кругу друзей. Москва — Коктебель</h3>
             <p class="museum__date">Выставка до 20 ноября</p>
             <p class="museum__description">
               Текст о музее текст Текст о музее текст Текст о музее текст Текст о музее текст
             </p>
-            <a href="/exhibition/1" class="museum__link">Купить билет</a>
+            <a href="/exhibition/1"
+               class="museum__link"
+               aria-describedby="museum-image-title-1">Купить билет</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" role="group" tabindex="0">
             <img src="./assets/img/exhibition-2.jpg"
                  alt="Постер инсталляции"
                  class="museum__image">
@@ -183,7 +242,7 @@
             <a href="/exhibition/2" class="museum__link">Купить билет</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" role="group" tabindex="0">
             <img src="./assets/img/exhibition-3.jpg"
                  alt="Девушка, смотрящая в даль — самая известная работа Дюрера"
                  class="museum__image">
@@ -203,7 +262,6 @@
              class="hidden"
              id="exhibitions-today-tab"
              aria-labelledby="exhibitions-today">
-
         </div>
 
         <div tabindex="0"
@@ -211,7 +269,6 @@
              class="hidden"
              id="exhibitions-tomorrow-tab"
              aria-labelledby="exhibitions-tomorrow">
-
         </div>
       </div>
     </div>
@@ -245,42 +302,42 @@
              id="buildings-tab"
              aria-labelledby="buildings"
              class="museum__items">
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-1.jpg" alt="" class="museum__image">
             <h3 class="museum__title">МЕМОРИАЛЬНАЯ КВАРТИРА С.Т. РИХТЕРА</h3>
             <p class="museum__description">Мул. Большая Бронная, 2/6, 16 этаж, кв. 58</p>
             <a href="/museum/1" class="museum__link">Подробнее</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-2.jpg" alt="" class="museum__image">
             <h3 class="museum__title">ЦЭВ «МУСЕЙОН»</h3>
             <p class="museum__description">Колымажный пер., 6/2, 3 (вход с Малого Знаменского переулка)</p>
             <a href="/museum/2" class="museum__link">Подробнее</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-3.jpg" alt="" class="museum__image">
             <h3 class="museum__title">УСАДЬБА ЛОПУХИНЫХ</h3>
             <p class="museum__description">Малый Знаменский пер., 3/5с48</p>
             <a href="/museum/3" class="museum__link">Подробнее</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-4.jpg" alt="" class="museum__image">
             <h3 class="museum__title">УЧЕБНЫЙ МУЗЕЙ</h3>
             <p class="museum__description">ул. Чаянова, 15</p>
             <a href="/museum/4" class="museum__link">Подробнее</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-5.jpg" alt="" class="museum__image">
             <h3 class="museum__title">ОТДЕЛ ЛИЧНЫХ КОЛЛЕКЦИЙ</h3>
             <p class="museum__description">ул. Волхонка, 10</p>
             <a href="/museum/5" class="museum__link">Подробнее</a>
           </div>
 
-          <div class="museum__item" role="group">
+          <div class="museum__item" tabindex="0">
             <img src="./assets/img/museum-6.jpg" alt="" class="museum__image">
             <h3 class="museum__title">ГАЛЕРЕЯ</h3>
             <p class="museum__description">ул. Волхонка, 14</p>
@@ -325,9 +382,9 @@
     </div>
   </section>
 
-  <section class="streams" id="streams" tabindex="-1">
+  <section class="streams" id="streams" tabindex="-1" aria-labelledby="streams-title">
     <div class="container">
-      <h2 class="title">Онлайн-трансляции</h2>
+      <h2 class="title" id="streams-title">Онлайн-трансляции</h2>
 
       <span class="visually-hidden" id="video-title">
         Видео: "Ай Вейвей: движение к общечеловеческому"
@@ -335,11 +392,12 @@
 
       <div class="video"
            tabindex="0"
-           aria-labelledby="Воспроизвести видео"
-           aria-describedby="video-title"
            style="background-image: url('https://img.youtube.com/vi/5qRR-5H1XgU/maxresdefault.jpg');"
-           data-lin="https://www.youtube.com/watch?v=5qRR-5H1XgU">
-        <a class="video__link" href="https://www.youtube.com/watch?v=5qRR-5H1XgU">
+           data-id="5qRR-5H1XgU"
+           data-title="Видео: 'Ай Вейвей: движение к общечеловеческому'">
+        <a class="video__link"
+           href="https://www.youtube.com/watch?v=5qRR-5H1XgU"
+           aria-labelledby="video-title">
         </a>
 
         <button class="video__play"
@@ -411,18 +469,40 @@
               aria-labelledby="subscription-form-title"
               role="form"
               novalidate>
-          <label for="subscription-email" class="subscription__label">E-mail</label>
-          <input type="email"
-                 class="subscription__email"
-                 id="subscription-email"
-                 placeholder="Например: user@example.com">
+          <div class="subscription__left-block">
+            <div class="form-row">
+              <label for="subscription-email" class="subscription__label">E-mail</label>
 
-          <label class="subscription__checkbox-container">
-            <input type="checkbox" class="subscription__checkbox">
-            Согласен на обработку персональх данных
-          </label>
+              <input type="email"
+                     class="subscription__email"
+                     id="subscription-email"
+                     name="email"
+                     placeholder="Например: user@example.com"
+                     aria-describedby="subscription-email-input-error">
 
-          <button type="submit" disabled class="button subscription__submit-button">Подписаться</button>
+              <span class="invalid-message hidden"
+                    id="subscription-email-input-error"
+                    aria-live="polite"></span>
+            </div>
+
+            <div class="form-row">
+              <label class="subscription__checkbox-container">
+                <input type="checkbox"
+                       class="subscription__checkbox"
+                       name="agreed"
+                       aria-describedby="subscription-agreed-input-error">
+                Согласен на обработку персональх данных
+              </label>
+
+              <span class="invalid-message hidden"
+                    id="subscription-agreed-input-error"
+                    aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="subscription__right-block">
+            <button type="submit" class="button subscription__submit-button">Подписаться</button>
+          </div>
         </form>
       </div>
     </div>
@@ -430,16 +510,52 @@
 </footer>
 
 <div class="modal-overlay hidden">
-  <div class="modal login-modal" role="dialog" tabindex="-1">
-    <h2 class="title">Вход</h2>
+  <div class="modal login-modal"
+       role="dialog"
+       aria-modal="true"
+       tabindex="-1"
+       aria-label="Вход в личный кабинет">
+    <h2 class="title login-modal__title" id="login-modal-title">Вход</h2>
 
     <form class="login-modal__form"
           role="form"
+          aria-labelledby="login-modal-title"
           novalidate>
+      <div class="form-row">
+        <label for="login-username" class="login-modal__label">Логин</label>
+
+        <input type="text"
+               class="login-modal__input"
+               id="login-username"
+               name="login"
+               aria-describedby="login-username-input-error">
+
+        <span class="invalid-message hidden"
+              id="login-username-input-error"
+              aria-live="polite"></span>
+      </div>
+
+      <div class="form-row">
+        <label for="login-password" class="login-modal__label">Пароль</label>
+
+        <input type="password"
+               class="login-modal__input"
+               id="login-password"
+               name="password"
+               aria-describedby="login-password-input-error">
+
+        <span class="invalid-message hidden"
+              id="login-password-input-error"
+              aria-live="polite"></span>
+      </div>
+
+      <button class="login-modal__button" type="submit">Вход</button>
     </form>
+
+    <button class="close visually-hidden login-modal__close">Закрыть</button>
   </div>
 </div>
 
-<script src="./assets/js/main.min.js"></script>
+<script src="./assets/js/main.min.js?ver=1.0"></script>
 </body>
 </html>
