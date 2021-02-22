@@ -90,12 +90,26 @@
   width: 20%;
 }
 
+.subscription__label {
+  margin-bottom: 10px;
+}
+
 .subscription__email {
   background: none;
   border: none;
   border-bottom: 1px solid #000;
   width: 80%;
   font-size: 17px;
+  margin-bottom: 16px;
+}
+
+.formfield--invalid .subscription__email {
+  margin-bottom: 0;
+}
+
+.main-footer .invalid-message {
+  margin-bottom: 16px;
+  margin-top: 10px;
 }
 
 .subscription__checkbox-container {
@@ -104,16 +118,31 @@
   font-weight: 400;
   font-size: 15px;
   line-height: 19px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  padding-left: 40px;
   position: relative;
-  left: -15px;
 }
 
 .subscription__checkbox {
-  width: 43px;
-  height: 43px;
+  appearance: none;
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 24px;
+  height: 25px;
+}
+
+.subscription__checkbox-check {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border: 1px solid #000000;
+  border-radius: 4px;
+  margin-left: -40px;
+}
+
+.subscription__checkbox:checked + .subscription__checkbox-check {
+  background-image: url(../img/tick.svg);
 }
 
 .subscription__submit-button {
@@ -127,5 +156,30 @@
 }
 
 .invalid-message {
-  color: #ff0000;
+  color: #f00;
+}
+
+@media screen and (max-width: 992px) {
+  .subscription__form {
+    flex-direction: column;
+  }
+
+  .subscription__left-block {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .subscription__right-block {
+    width: 100%;
+  }
+
+  .subscription__email {
+    width: 100%;
+  }
+
+  .subscription__submit-button {
+    position: initial;
+    left: initial;
+    top: initial;
+  }
 }
