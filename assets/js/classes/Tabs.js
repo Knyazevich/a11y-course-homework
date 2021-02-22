@@ -7,7 +7,6 @@ class Tabs {
     this.tabPanels = qsAll('[role="tabpanel"]', this.tabsContainer);
     this.TAB_ACTIVE_CLASS = 'tabs__tab--active';
 
-    this.currentTab = null;
     this.tabList = null;
     this.tabPanel = null;
 
@@ -19,32 +18,17 @@ class Tabs {
   }
 
   _run() {
-    const tabs = qsAll('[role="tab"]', this.tabsContainer);
-
-    if (!tabs) {
+    if (!this.tabs) {
       console.warn('There are no tabs'); // eslint-disable-line
       return;
     }
 
-    this.currentTab = tabs[0];
-
-    tabs.forEach((tab) => {
-      tab.addEventListener('click', (e) => {
-        this._changeTab(e.target);
-      });
+    this.tabs.forEach((tab) => {
+      tab.addEventListener('click', (e) => this._changeTab(e.target));
     });
   }
 
   _changeTab(tab) {
-    this._makeTabActive(tab);
-  }
-
-  isActiveTab(tab) {
-    console.log(tab.getAttribute('aria-selected'));
-    return !!tab.getAttribute('aria-selected');
-  }
-
-  _makeTabActive(tab) {
     const newActiveTabPanel = qs(`#${tab.getAttribute('aria-controls')}`, this.tabsContainer);
 
     this.tabs.forEach((t) => {
@@ -57,7 +41,7 @@ class Tabs {
       tabPanel.classList.add('hidden');
     });
 
-    tab.classList.add('tabs__tab--active');
+    tab.classList.add(this.TAB_ACTIVE_CLASS);
 
     tab.setAttribute('aria-selected', 'true');
     tab.setAttribute('aria-expanded', 'true');

@@ -1,13 +1,14 @@
 import './polyfill';
+import sanitize from 'light-sanitize-html';
 import { qs, qsAll } from './dom-helpers';
-
-// import 'focus-visible/dist/focus-visible.min';
 
 import Tabs from './classes/Tabs';
 import Video from './classes/Video';
 import SubscriptionForm from './classes/SubscriptionForm';
 import LoginModal from './classes/LoginModal';
 import Carousel from './classes/Carousel';
+import Filter from './classes/Filter';
+import Popup from './classes/Popup';
 
 class Main {
   constructor() {
@@ -15,18 +16,30 @@ class Main {
   }
 
   _run() {
-    window.qs = qs;
-    window.qsAll = qsAll;
+    try {
+      window.qs = qs;
+      window.qsAll = qsAll;
+      window.Popup = Popup;
 
-    new Carousel();
+      new Carousel();
 
-    new Tabs({
-      tabsContainer: '.museum .tabs',
-    });
+      new Tabs({
+        tabsContainer: '.museum .tabs',
+      });
 
-    new Video();
-    new SubscriptionForm();
-    new LoginModal();
+      new Filter({
+        tabsContainer: '.exhibitions-filter',
+      });
+
+      new Video();
+      new SubscriptionForm();
+      new LoginModal();
+    } catch (e) {
+      new Popup({
+        message: `<b>Error</b>: ${sanitize(e)}`,
+        duration: 5000,
+      });
+    }
   }
 }
 

@@ -1,3 +1,4 @@
+import sanitize from 'light-sanitize-html';
 import { qs, qsAll } from '../dom-helpers';
 
 class Video {
@@ -40,14 +41,18 @@ class Video {
   _createIframe(id, title) {
     const iframe = document.createElement('iframe');
 
-    iframe.setAttribute('aria-label', title);
+    iframe.setAttribute('aria-label', sanitize(title));
     iframe.setAttribute('frameBorder', '0');
     iframe.setAttribute(
       'allow',
       'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
     );
     iframe.setAttribute('allowfullscreen', 'true');
-    iframe.setAttribute('src', `https://www.youtube-nocookie.com/embed/${id}?rel=0&showInfo=0&autoplay=1`);
+    iframe.setAttribute(
+      'src',
+      `https://www.youtube-nocookie.com/embed/${sanitize(id)}?rel=0&showInfo=0&autoplay=1`,
+    );
+
     iframe.classList.add('video__media');
 
     return iframe;

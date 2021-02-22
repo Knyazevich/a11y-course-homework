@@ -6,7 +6,7 @@
   <meta name="description"
         content="Официальный сайт Государственного музея изобразительных искусств имени А. С. Пушкина">
   <title>Главная - Государственный музей изобразительных искусств имени А. С. Пушкина</title>
-  <link rel="stylesheet" href="./assets/css/style.css?ver=1.5">
+  <link rel="stylesheet" href="./assets/css/style.css?ver=1.6">
 </head>
 <body>
 <header class="main-header" role="banner">
@@ -186,39 +186,42 @@
     <div class="container">
       <h2 class="title">Выставки и события</h2>
 
-      <div class="tabs">
-        <div role="tablist" aria-label="Категории" class="tabs__tablist">
+      <div class="tabs exhibitions-filter">
+        <div role="tablist" aria-label="Выбор событий по дате" class="tabs__tablist">
           <button role="tab"
                   aria-selected="true"
-                  aria-controls="exhibitions-all-tab"
+                  aria-controls="exhibitions-filter-results"
                   id="exhibitions-all"
-                  class="tabs__tab tabs__tab--active">
+                  class="tabs__tab exhibitions-filter__tab tabs__tab--active"
+                  data-filter="*">
             Все
           </button>
 
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="exhibitions-today-tab"
+                  aria-controls="exhibitions-filter-results"
                   id="exhibitions-today"
-                  class="tabs__tab">
+                  class="tabs__tab exhibitions-filter__tab"
+                  data-filter="today">
             Сегодня
           </button>
 
           <button role="tab"
                   aria-selected="false"
-                  aria-controls="exhibitions-tomorrow-tab"
+                  aria-controls="exhibitions-filter-results"
                   id="exhibitions-tomorrow"
-                  class="tabs__tab">
+                  class="tabs__tab exhibitions-filter__tab"
+                  data-filter="tomorrow">
             Завтра
           </button>
         </div>
 
         <div tabindex="0"
              role="tabpanel"
-             id="exhibitions-all-tab"
-             aria-labelledby="exhibitions-all"
-             class="museum__items">
-          <div class="museum__item" role="group" tabindex="0">
+             id="exhibitions-filter-results"
+             aria-label="События на указанную дату"
+             class="museum__items exhibitions-filter__items">
+          <div class="museum__item exhibitions-filter__item" role="group" tabindex="0" data-filter="today">
             <img src="./assets/img/exhibition-1.jpg"
                  alt="Лорем ипсум — самая известная работа Святослава Рихтера"
                  class="museum__image">
@@ -237,7 +240,7 @@
                aria-describedby="museum-image-title-1">Купить билет</a>
           </div>
 
-          <div class="museum__item" role="group" tabindex="0">
+          <div class="museum__item exhibitions-filter__item" role="group" tabindex="0" data-filter="today">
             <img src="./assets/img/exhibition-2.jpg"
                  alt="Постер инсталляции 'Тату'"
                  class="museum__image">
@@ -257,7 +260,7 @@
             </a>
           </div>
 
-          <div class="museum__item" role="group" tabindex="0">
+          <div class="museum__item exhibitions-filter__item" role="group" tabindex="0" data-filter="tomorrow">
             <img src="./assets/img/exhibition-3.jpg"
                  alt="Девушка, смотрящая в даль — самая известная работа Дюрера"
                  class="museum__image">
@@ -277,20 +280,6 @@
               Купить билет
             </a>
           </div>
-        </div>
-
-        <div tabindex="0"
-             role="tabpanel"
-             class="hidden"
-             id="exhibitions-today-tab"
-             aria-labelledby="exhibitions-today">
-        </div>
-
-        <div tabindex="0"
-             role="tabpanel"
-             class="hidden"
-             id="exhibitions-tomorrow-tab"
-             aria-labelledby="exhibitions-tomorrow">
         </div>
       </div>
     </div>
@@ -583,6 +572,6 @@
   </div>
 </div>
 
-<script src="./assets/js/main.min.js?ver=1.2"></script>
+<script src="./assets/js/main.min.js?ver=1.3"></script>
 </body>
 </html>

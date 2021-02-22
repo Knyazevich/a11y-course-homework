@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
-    "focus-visible": "^5.1.0",
+    "light-sanitize-html": "^1.0.2",
     "normalize.css": "^8.0.1",
     "validate.js": "^0.13.1"
   }
