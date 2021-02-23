@@ -130,18 +130,36 @@
     background-size: contain;
     background-position: center;
   }
-}
 
+  .events-carousel__arrow--prev,
+  .events-carousel__arrow--next {
+    top: 43%;
+  }
+
+  .events-carousel__arrow--prev {
+    left: 0;
+  }
+
+  .events-carousel__arrow--next {
+    right: 0;
+  }
+}
 
 @media screen and (max-width: 992px) {
   .main-header__primary {
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
   }
 
-  .languages, .user-controls {
-    margin-top: 30px;
+  .search, .languages {
+    margin-left: initial;
+    margin-right: initial;
+  }
+
+  .logo, .search, .languages {
+    margin-bottom: 25px;
   }
 
   .main-menu {
@@ -175,6 +193,10 @@
     width: 100%;
   }
 
+  .museum__image {
+    width: 100%;
+  }
+
   .events, .exhibitions, .museum, .streams {
     padding-bottom: 50px;
   }
@@ -192,3 +214,20 @@
     margin-bottom: 50px;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .events-carousel {
+    margin-bottom: 100px;
+  }
+
+  .events-carousel__arrow--next, .events-carousel__arrow--prev {
+    top: 100%;
+  }
+
+  .events-carousel__link {
+    padding: 10px;
+    left: 5px;
+    bottom: 10px;
+  }
+}
+
